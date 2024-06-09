@@ -1,0 +1,24 @@
+# Implementierung
+
+## Client
+
+Der Client besteht aus den folgenden Klassen:
+- `MandelbrotModel`: Speichert die Daten für die Berechnung.
+- `MandelbrotView`: Schnittstelle zur Anzeige der Ergebnisse.
+- `MandelbrotViewImpl`: Implementiert die Anzeige der Ergebnisse.
+- `MandelbrotPresenter`: Vermittelt zwischen View und Model und steuert die Berechnungen.
+
+## Master-Server
+
+Der Master-Server besteht aus den folgenden Klassen:
+- `MandelbrotMaster`: Implementiert die Verteilung der Berechnungen und die Zusammenführung der Ergebnisse.
+- `Worker`: Schnittstelle für die Worker-Server.
+
+## Worker-Server
+
+Der Worker-Server besteht aus der Klasse:
+- `MandelbrotWorker`: Implementiert die Berechnung eines Teils der Mandelbrotmenge und liefert das Ergebnis zurück.
+
+## Zeitmessung
+
+Die Zeitmessung erfolgt auf dem Master-Server durch Erfassen der Start- und Endzeit der Berechnungen. Der Verteilungsgewinn wird durch den Vergleich der Berechnungszeiten mit und ohne Verteilung ermittelt.
