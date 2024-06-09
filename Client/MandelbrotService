@@ -1,0 +1,7 @@
+import java.awt.image.BufferedImage;
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+
+public interface MandelbrotService extends Remote {
+    BufferedImage computeMandelbrot(MandelbrotModel model) throws RemoteException;
+}
