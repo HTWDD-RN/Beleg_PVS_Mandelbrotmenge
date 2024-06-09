@@ -22,4 +22,4 @@ Dieses Projekt berechnet und visualisiert die Mandelbrotmenge mithilfe eines ver
 
 ## Autoren
 
-- Mateo Thürig
+- Mateo Thürig -> s85638
