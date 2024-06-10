@@ -2,23 +2,30 @@
 
 ## Client
 
-Der Client besteht aus den folgenden Klassen:
-- `MandelbrotModel`: Speichert die Daten für die Berechnung.
-- `MandelbrotView`: Schnittstelle zur Anzeige der Ergebnisse.
-- `MandelbrotViewImpl`: Implementiert die Anzeige der Ergebnisse.
-- `MandelbrotPresenter`: Vermittelt zwischen View und Model und steuert die Berechnungen.
+Der Client implementiert die Benutzeroberfläche und nutzt die MVP-Architektur zur Trennung der Darstellung von der Geschäftslogik.
+
+### Klassen
+
+- **ClientMain**: Startet die Client-Anwendung.
+- **MandelbrotModel**: Hält die Daten für die Berechnung der Mandelbrotmenge.
+- **MandelbrotView**: Schnittstelle für die Anzeige des berechneten Bildes.
+- **MandelbrotViewImpl**: Implementiert die Anzeige des berechneten Bildes.
+- **MandelbrotPresenter**: Verbindet das Modell und die Ansicht und koordiniert die Berechnungen.
 
 ## Master-Server
 
-Der Master-Server besteht aus den folgenden Klassen:
-- `MandelbrotMaster`: Implementiert die Verteilung der Berechnungen und die Zusammenführung der Ergebnisse.
-- `Worker`: Schnittstelle für die Worker-Server.
+Der Master-Server koordiniert die Berechnungen und verteilt die Aufgaben auf die Worker-Server.
+
+### Klassen
+
+- **MandelbrotMaster**: Implementiert die Hauptlogik des Master-Servers.
+- **MandelbrotService**: Schnittstelle zur Berechnung der Mandelbrotmenge.
 
 ## Worker-Server
 
-Der Worker-Server besteht aus der Klasse:
-- `MandelbrotWorker`: Implementiert die Berechnung eines Teils der Mandelbrotmenge und liefert das Ergebnis zurück.
+Die Worker-Server führen die Berechnungen durch und senden die Ergebnisse an den Master-Server zurück.
 
-## Zeitmessung
+### Klassen
 
-Die Zeitmessung erfolgt auf dem Master-Server durch Erfassen der Start- und Endzeit der Berechnungen. Der Verteilungsgewinn wird durch den Vergleich der Berechnungszeiten mit und ohne Verteilung ermittelt.
+- **MandelbrotWorker**: Implementiert die Hauptlogik des Worker-Servers.
+- **Worker**: Schnittstelle zur Berechnung eines Teils der Mandelbrotmenge.
