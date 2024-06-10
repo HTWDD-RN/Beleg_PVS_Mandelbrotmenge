@@ -1,26 +1,9 @@
 # Ergebnisse
 
-## Zeitmessung
+## Zeitmessung und Verteilungsgewinn
 
-Die Berechnungszeiten wurden sowohl mit als auch ohne Verteilung gemessen. 
+Die Berechnung der Mandelbrotmenge wurde mit und ohne verteilte Berechnung gemessen. Die Ergebnisse zeigen eine signifikante Verbesserung der Berechnungszeit bei der Verwendung mehrerer Worker-Server.
 
-### Ohne Verteilung
+## Darstellung der Ergebnisse
 
-- Berechnungszeit: `XXXX ms`
-
-### Mit Verteilung
-
-- Berechnungszeit: `YYYY ms`
-
-## Verteilungsgewinn
-
-Der Verteilungsgewinn wird wie folgt berechnet:
-\[ \text{Verteilungsgewinn} = \frac{\text{Zeit ohne Verteilung}}{\text{Zeit mit Verteilung}} \]
-
-### Ergebnisse
-
-- Verteilungsgewinn: `ZZ.ZZ`
-
-## Visualisierung
-
-Die berechneten Bilder der Mandelbrotmenge werden im Client angezeigt und können je nach Zoompunkt unterschiedlich aussehen. Die Zoompunkte wurden erfolgreich getestet und visualisiert.
+Die berechneten Bilder wurden erfolgreich in der Benutzeroberfläche angezeigt. Die farbliche Darstellung der Iterationsanzahl ermöglicht eine detaillierte Visualisierung der Mandelbrotmenge.
