@@ -1,9 +1,8 @@
 public class MandelbrotModel {
-    private double zoomX;
-    private double zoomY;
-    private int maxIterations;
     private int width;
     private int height;
+    private int maxIterations;
+    // Getter und Setter Methoden
 
-    // Getter und Setter
+    // Weitere Methoden
 }
