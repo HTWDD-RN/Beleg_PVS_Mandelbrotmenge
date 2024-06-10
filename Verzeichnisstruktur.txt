@@ -5,6 +5,7 @@ HTWDD-RN/
 │   ├── MandelbrotView.java
 │   ├── MandelbrotViewImpl.java
 │   ├── MandelbrotPresenter.java
+|   ├── BufferedImage.java
 │   └── MandelbrotService.java
 ├── master/
 │   └── MandelbrotMaster.java
