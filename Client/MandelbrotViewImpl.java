@@ -1,27 +1,36 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public class MandelbrotViewImpl implements MandelbrotView {
-    private JFrame frame;
-    private JLabel label;
+public class MandelbrotViewImpl extends JPanel implements MandelbrotView {
+    private MandelbrotPresenter presenter;
+    private BufferedImage image;
 
-    public MandelbrotViewImpl() {
-        frame = new JFrame("Mandelbrot Viewer");
-        label = new JLabel();
-        frame.add(label);
+    @Override
+    public void displayImage(BufferedImage image) {
+        this.image = image;
+        repaint();
+    }
+
+    @Override
+    public void setPresenter(MandelbrotPresenter presenter) {
+        this.presenter = presenter;
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        if (image != null) {
+            g.drawImage(image, 0, 0, null);
+        }
+    }
+
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Mandelbrot Viewer");
+        MandelbrotViewImpl view = new MandelbrotViewImpl();
+        frame.getContentPane().add(view);
         frame.setSize(1024, 768);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }
-
-    @Override
-    public void displayImage(BufferedImage image) {
-        label.setIcon(new ImageIcon(image));
-    }
-
-    @Override
-    public void showError(String message) {
-        JOptionPane.showMessageDialog(frame, message, "Error", JOptionPane.ERROR_MESSAGE);
-    }
 }
-
