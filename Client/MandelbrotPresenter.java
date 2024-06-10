@@ -1,3 +1,5 @@
+import java.awt.image.BufferedImage;
+
 public class MandelbrotPresenter {
     private MandelbrotView view;
     private MandelbrotModel model;
@@ -7,16 +9,18 @@ public class MandelbrotPresenter {
         this.view = view;
         this.model = model;
         this.service = service;
+        view.setPresenter(this);
     }
 
     public void onZoomPointEntered(double x, double y) {
-        model.setZoomX(x);
-        model.setZoomY(y);
-        try {
-            BufferedImage image = service.computeMandelbrot(model);
-            view.displayImage(image);
-        } catch (RemoteException e) {
-            view.showError(e.getMessage());
-        }
+        // Starten der Berechnung in einem separaten Thread
+        new Thread(() -> {
+            try {
+                BufferedImage image = service.calculateMandelbrot(model, x, y);
+                view.displayImage(image);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }).start();
     }
 }
