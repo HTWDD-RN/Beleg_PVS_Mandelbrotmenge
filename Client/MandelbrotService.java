@@ -3,5 +3,5 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 
 public interface MandelbrotService extends Remote {
-    BufferedImage computeMandelbrot(MandelbrotModel model) throws RemoteException;
+    BufferedImage calculateMandelbrot(MandelbrotModel model, double x, double y) throws RemoteException;
 }
