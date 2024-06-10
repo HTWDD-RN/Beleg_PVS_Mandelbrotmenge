@@ -1,29 +1,16 @@
 # Architektur
 
-## Überblick
+Das System verwendet die Model-View-Presenter (MVP)-Architektur zur Trennung der Geschäftslogik von der Darstellung. Die Berechnung der Mandelbrotmenge wird über einen Master-Server und mehrere Worker-Server verteilt.
 
-Dieses Projekt verwendet eine verteilte Architektur zur Berechnung der Mandelbrotmenge. Die Hauptkomponenten sind:
+## Module
 
-1. **Client**: Die Benutzeroberfläche zur Eingabe des Zoompunkts und Anzeige des Ergebnisses.
-2. **Master-Server**: Verantwortlich für die Verteilung der Berechnungsaufgaben an die Worker-Server.
-3. **Worker-Server**: Führt die Berechnungen durch und liefert die Ergebnisse an den Master-Server zurück.
+- **Client**: Stellt die Benutzeroberfläche bereit und kommuniziert mit dem Master-Server.
+- **Master-Server**: Koordiniert die Verteilung der Berechnungen auf die Worker-Server.
+- **Worker-Server**: Führen die tatsächlichen Berechnungen der Mandelbrotmenge durch.
 
-## Komponenten
+## Kommunikationsfluss
 
-### Client
-
-Der Client verwendet das Model-View-Presenter (MVP) Muster:
-- **Model**: Hält die Daten zur Berechnung.
-- **View**: Zeigt das Ergebnis an und nimmt Benutzereingaben entgegen.
-- **Presenter**: Verarbeitet die Eingaben und steuert die Kommunikation mit dem Master-Server.
-
-### Master-Server
-
-- **Registriert Worker-Server**.
-- **Teilt Berechnungsaufgaben** in kleinere Teile auf.
-- **Sammelt und kombiniert** die Ergebnisse der Worker-Server.
-
-### Worker-Server
-
-- **Berechnet** Teile der Mandelbrotmenge.
-- **Liefert die Ergebnisse** an den Master-Server zurück.
+1. Der Client sendet eine Berechnungsanforderung an den Master-Server.
+2. Der Master-Server verteilt die Berechnungen auf die Worker-Server.
+3. Die Worker-Server führen ihre Berechnungen durch und senden die Ergebnisse zurück an den Master-Server.
+4. Der Master-Server kombiniert die Ergebnisse und sendet das endgültige Bild an den Client.
