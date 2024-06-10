@@ -1,32 +1,16 @@
 HTWDD-RN/
 ├── client/
-│   ├── src/
-│   │   ├── main/
-│   │   │   ├── java/
-│   │   │   │   ├── ClientMain.java
-│   │   │   │   ├── MandelbrotModel.java
-│   │   │   │   ├── MandelbrotPresenter.java
-│   │   │   │   ├── MandelbrotService.java
-│   │   │   │   └── MandelbrotView.java
-│   │   │   └── resources/
-│   │   └── test/
+│   ├── ClientMain.java
+│   ├── MandelbrotModel.java
+│   ├── MandelbrotView.java
+│   ├── MandelbrotViewImpl.java
+│   ├── MandelbrotPresenter.java
+│   └── MandelbrotService.java
 ├── master/
-│   ├── src/
-│   │   ├── main/
-│   │   │   ├── java/
-│   │   │   │   ├── MandelbrotMaster.java
-│   │   │   │   └── Worker.java
-│   │   │   └── resources/
-│   │   └── test/
+│   └── MandelbrotMaster.java
 ├── worker/
-│   ├── src/
-│   │   ├── main/
-│   │   │   ├── java/
-│   │   │   │   ├── MandelbrotWorker.java
-│   │   │   └── resources/
-│   │   └── test/
-├── README.md
+│   └── MandelbrotWorker.java
 └── documentation/
-    ├── architecture.md
-    ├── implementation.md
-    └── results.md
+├── architecture.md
+├── implementation.md
+└── results.md
